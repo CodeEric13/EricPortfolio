@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="myInfostyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Let's Connect</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+      <section class="hero-text">
+        <p class="intro">Hi there! I’m</p>
+        <h1>
+          Eric S. De Los Santos,<br /><span>an aspiring Web Developer</span
+          ><br />based in Dapitan City
+        </h1>
+        <p class="desc">
+          I build modern and responsive web applications that focus on
+          performance and design. I love creating seamless digital experiences.
+        </p>
+      </section>
+
+      <section class="hero-image">
+        <img src="images/2r b-Photoroom.png" alt="Your Photo" />
+      </section>
+    </main>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section scroll-animation">
+      <h2>My Projects</h2>
+      <p class="projects-intro scroll-animation">
+        Showcasing some of the work I’ve done recently.
+      </p>
+      <div class="projects-grid">
+        <div class="project-wrapper scroll-animation">
+          <i class="fas fa-laptop-code project-icon"></i>
+          <div class="project-card">
+            <h3>Integrated Medical Records System</h3>
+            <p>A modern personal website built with HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+        <div class="project-wrapper scroll-animation">
+          <i class="fas fa-boxes project-icon"></i>
+          <div class="project-card">
+            <h3>Medicine Inventory Management System</h3>
+            <p>A desktop application built using C# with DevExpress Framework.</p>
+          </div>
+        </div>
+        <div class="project-wrapper scroll-animation">
+          <i class="fas fa-cloud-sun project-icon"></i>
+          <div class="project-card">
+            <h3>Weather App</h3>
+            <p>A real-time weather app using OpenWeather API and JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Projects Section -->
+    <section id="portfolio-filter" class="portfolio-filter scroll-animation">
+      <h2>Filter Projects</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="desktop">Desktop Applications</button>
+      </div>
+      <div class="filtered-projects">
+        <div class="project-card scroll-animation" data-category="web">
+          <h3>Web Project 1</h3>
+          <p>Details about the project...</p>
+        </div>
+        <div class="project-card scroll-animation" data-category="mobile">
+          <h3>Mobile Project 1</h3>
+          <p>Details about the project...</p>
+        </div>
+        <div class="project-card scroll-animation" data-category="desktop">
+          <h3>Desktop Project 1</h3>
+          <p>Details about the project...</p>
+        </div>
+        <div class="project-card scroll-animation" data-category="web">
+          <h3>Web Project 2</h3>
+          <p>Details about the project...</p>
+        </div>
+        <div class="project-card scroll-animation" data-category="mobile">
+          <h3>Mobile Project 2</h3>
+          <p>Details about the project...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h3>HTML</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>CSS</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>JavaScript</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <p>"Eric is an amazing developer! His work is top-notch."</p>
+        <h4>- Client Name</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Highly recommend Eric for any web development project."</p>
+        <h4>- Peer Name</h4>
+      </div>
+    </section>
+
+    <!-- Download Resume Section -->
+    <section id="resume" class="resume-section scroll-animation">
+      <h2>Download My Resume</h2>
+      <a href="Files/Eric_De_Los_Santos_Resume.pdf" download="Eric_De_Los_Santos_Resume.pdf" class="resume-btn">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </section>
+
+    <!-- Social Icons Section -->
+    <div class="social-icons hidden scroll-animation" id="socialIcons">
+      <a href="https://instagram.com" target="_blank" class="icon instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://facebook.com" target="_blank" class="icon facebook"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://x.com" target="_blank" class="icon twitter"
+        ><i class="fab fa-x-twitter"></i
+      ></a>
+    </div>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="theme-toggle">
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <!-- Back-to-Top Button -->
+    <button id="backToTop" class="back-to-top">↑</button>
+
+    <!-- Font Awesome Script -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Social Icon Toggle Script -->
+    <script>
+      const letsConnectLink = document.querySelector(
+        '.nav-links a[href="#contact"]'
+      );
+      const socialIcons = document.getElementById("socialIcons");
+
+      // Toggle social icons on link click
+      letsConnectLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent document click from triggering
+        socialIcons.classList.toggle("hidden");
+        socialIcons.classList.toggle("fade-in");
+      });
+
+      // Prevent hiding when clicking the icons
+      socialIcons.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      // Hide when clicking elsewhere
+      document.addEventListener("click", () => {
+        if (!socialIcons.classList.contains("hidden")) {
+          socialIcons.classList.add("hidden");
+          socialIcons.classList.remove("fade-in");
+        }
+      });
+    </script>
+
+      <script src="myInfoAni.js"></script>
+  </body>
+</html>

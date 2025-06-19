@@ -11,20 +11,21 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
+  background-color: #3c393d;
   color: #fff;
 }
 
 /* Navbar */
 .navbar {
-  position: absolute; /* Place it within the hero section */
-  bottom: 115px; /* Position it closer to the text */
-  left: 10%; /* Align it with the hero text */
+  position: absolute; /* Initial position within the hero section */
+  bottom: 150px; /* Initial bottom position */
+  left: 9%; /* Align it with the hero text */
+  top: 68%; /* Initial top position */
   display: flex;
   justify-content: center;
   background-color: transparent; /* Transparent background */
   z-index: 100; /* Ensure it stays above other elements */
-  transition: all 0.3s ease; /* Smooth transition for position changes */
+  transition: all 0.8s ease; /* Smooth transition with a delay */
 }
 
 .nav-links a {
@@ -34,18 +35,22 @@ body {
   font-weight: 500;
 }
 
-.nav-links a:hover {
+.nav-links a:hover {  
   text-decoration: underline;
 }
 
 /* Navbar after scrolling */
 .navbar.scrolled {
- position: fixed; /* Fix it at the top-right corner */
-  top: 20px; /* Position it slightly below the top */
-  right: 0px; /* Align it to the right */
+  position: fixed; /* Fix the navbar at the top-right corner */
+  top: 20px; /* Move to the top */
+  right: 20px; /* Align to the right */
+  bottom: auto; /* Remove bottom positioning */
+  left: auto; /* Remove left positioning */
   justify-content: flex-end; /* Align navigation links to the right */
+ /* background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
   padding: 0.5rem 1rem; /* Adjust padding */
   border-radius: 5px; /* Optional: Add rounded corners */
+  transition: all 0.8s ease; /* Smooth transition with a delay */
 }
 
 /* Hero layout */
@@ -55,17 +60,19 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 5rem 10%;
-  background-color: #121212;
+  background-color: #3c393d;
 }
 
 .hero-text {
   flex: 1;
+  margin-top: -50px; /* Move the content up by 50px */
 }
 
 .hero-text .intro {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #ccc;
+  margin-top: -100px;
 }
 
 .hero-text h1 {
@@ -157,7 +164,7 @@ body {
 }
 
 .projects-section {
-  background-color: #121212;
+  background-color: #3c393d;
   padding-top: 2rem;
   padding-bottom: 5rem;
   text-align: center;
@@ -248,7 +255,7 @@ body {
 
 /* Skills Section */
 .skills-section {
-  background-color: #121212;
+  background-color: #3c393d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -290,7 +297,7 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-  background-color: #121212;
+  background-color: #3c393d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -455,7 +462,7 @@ body {
 
 /* Filter Projects Section */
 .portfolio-filter {
-  background-color: #121212;
+  background-color: #3c393d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -510,7 +517,7 @@ body {
 
 /* Download Resume Section */
 .resume-section {
-  background-color: #121212;
+  background-color: #3c393d;
   padding: 2rem 5%;
   text-align: center;
 }

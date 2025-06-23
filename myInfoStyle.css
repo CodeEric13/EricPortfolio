@@ -11,21 +11,29 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   color: #fff;
 }
 
 /* Navbar */
+/* Navbar initial state */
 .navbar {
   position: absolute; /* Initial position within the hero section */
-  bottom: 150px; /* Initial bottom position */
-  left: 9%; /* Align it with the hero text */
   top: 68%; /* Initial top position */
+  left: 9%; /* Align it with the hero text */
+  right: auto;
+  bottom: 150px; /* Initial bottom position */
+  opacity: 1;
+  pointer-events: auto;
   display: flex;
   justify-content: center;
   background-color: transparent; /* Transparent background */
   z-index: 100; /* Ensure it stays above other elements */
-  transition: all 0.8s ease; /* Smooth transition with a delay */
+  transition:
+    top 0.7s cubic-bezier(0.77, 0, 0.18, 1),
+    left 0.7s cubic-bezier(0.77, 0, 0.18, 1),
+    right 0.7s cubic-bezier(0.77, 0, 0.18, 1),
+    opacity 0.5s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .nav-links a {
@@ -39,18 +47,25 @@ body {
   text-decoration: underline;
 }
 
-/* Navbar after scrolling */
-.navbar.scrolled {
-  position: fixed; /* Fix the navbar at the top-right corner */
-  top: 20px; /* Move to the top */
-  right: 20px; /* Align to the right */
-  bottom: auto; /* Remove bottom positioning */
-  left: auto; /* Remove left positioning */
-  justify-content: flex-end; /* Align navigation links to the right */
- /* background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
-  padding: 0.5rem 1rem; /* Adjust padding */
-  border-radius: 5px; /* Optional: Add rounded corners */
-  transition: all 0.8s ease; /* Smooth transition with a delay */
+/* Hide navbar when scrolling */
+.navbar.hide-on-scroll {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Navbar in upper right after scrolling */
+.navbar.show-upper-right {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  left: auto;
+  bottom: auto;
+  opacity: 1;
+  pointer-events: auto;
+  /* background: rgba(0,0,0,0.7);*/
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 
 /* Hero layout */
@@ -60,7 +75,7 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 5rem 10%;
-  background-color: #3c393d;
+  background-color: #0e0d0d;
 }
 
 .hero-text {
@@ -164,7 +179,7 @@ body {
 }
 
 .projects-section {
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   padding-top: 2rem;
   padding-bottom: 5rem;
   text-align: center;
@@ -255,7 +270,7 @@ body {
 
 /* Skills Section */
 .skills-section {
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -297,7 +312,7 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -462,7 +477,7 @@ body {
 
 /* Filter Projects Section */
 .portfolio-filter {
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -517,7 +532,7 @@ body {
 
 /* Download Resume Section */
 .resume-section {
-  background-color: #3c393d;
+  background-color: #0e0d0d;
   padding: 2rem 5%;
   text-align: center;
 }
@@ -549,6 +564,177 @@ body {
 
 .resume-btn:hover {
   background-color: #007bff;
+}
+
+/* Certificates Section */
+.certificates-section {
+  background-color: #0e0d0d;
+  padding: 2rem 5%;
+  text-align: center;
+}
+
+.certificates-section h2 {
+  font-size: 2.5rem;
+  color: #00bcd4;
+  margin-bottom: 2rem;
+}
+
+.certificates-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.certificate-card {
+  background-color: #fff;
+  color: #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.certificate-card img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.certificate-card p {
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 500;
+}
+
+.certificate-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.view-btn, .download-btn {
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.view-btn i, .download-btn i {
+  margin-right: 0.5rem;
+}
+
+.view-btn:hover, .download-btn:hover {
+  background-color: #007bff;
+}
+
+/* About Section */
+.about-section {
+  background-color: #0e0d0d;
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  color: #00bcd4;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00bcd4;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  margin-bottom: 1rem;
+  background: #222;
+}
+
+.about-text {
+  max-width: 700px;
+  color: #fff;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.about-greeting {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+.highlight {
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+.about-quote {
+  display: block;
+  font-style: italic;
+  color: #bbb;
+  margin: 1.5rem 0 1rem 0;
+  font-size: 1rem;
+  border-left: 3px solid #00bcd4;
+  padding-left: 1rem;
+}
+
+#morphing-photo {
+  position: fixed; /* Fixed position to follow the scroll */
+  left: 20px; /* Initial left position */ 
+  top: 10rem; /* Initial top position */
+  bottom: 10rem; /* Remove bottom positioning */
+  width: 120px; /* Initial width */
+  height: 120px; /* Initial height */
+  z-index: 1000;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* When scrolled to About Me */
+#morphing-photo.about-position {
+  left: 50%; /* Center horizontally in About section */
+  top: 20vh; /* Adjust this value to match the About section's vertical position */
+  width: 160px; 
+  height: 160px;
+  transform: translateX(-50%);
+  border: 4px solid #00bcd4;
+}
+
+@media (max-width: 700px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    text-align: center;
+  }
 }
 
 

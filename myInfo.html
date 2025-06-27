@@ -8,9 +8,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
   <body> 
@@ -228,16 +225,16 @@
     </section>
 
     <!-- Social Icons Section -->
-    <div class="social-icons hidden scroll-animation" id="socialIcons">
-      <a href="https://instagram.com" target="_blank" class="icon instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://facebook.com" target="_blank" class="icon facebook"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-      <a href="https://x.com" target="_blank" class="icon twitter"
-        ><i class="fab fa-x-twitter"></i
-      ></a>
+    <div class="social-icons hidden" id="socialIcons">
+      <a href="https://instagram.com" target="_blank" class="icon instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://facebook.com" target="_blank" class="icon facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://x.com" target="_blank" class="icon twitter">
+        <i class="fab fa-x-twitter"></i>
+      </a>
     </div>
 
     <!-- Back-to-Top Button -->
@@ -251,31 +248,30 @@
 
     <!-- Social Icon Toggle Script -->
     <script>
-      const letsConnectLink = document.querySelector(
-        '.nav-links a[href="#contact"]'
-      );
-      const socialIcons = document.getElementById("socialIcons");
+      // Show/hide social icons on "Let's Connect" click
+const letsConnectLink = document.querySelector('.nav-links a[href="#contact"]');
+const socialIcons = document.getElementById("socialIcons");
 
-      // Toggle social icons on link click
-      letsConnectLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent document click from triggering
-        socialIcons.classList.toggle("hidden");
-        socialIcons.classList.toggle("fade-in");
-      });
+letsConnectLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  socialIcons.classList.toggle("hidden");
+  socialIcons.classList.toggle("fade-in");
+  if (!socialIcons.classList.contains("hidden")) {
+    socialIcons.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+});
 
-      // Prevent hiding when clicking the icons
-      socialIcons.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
+socialIcons.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
 
-      // Hide when clicking elsewhere
-      document.addEventListener("click", () => {
-        if (!socialIcons.classList.contains("hidden")) {
-          socialIcons.classList.add("hidden");
-          socialIcons.classList.remove("fade-in");
-        }
-      });
+document.addEventListener("click", () => {
+  if (!socialIcons.classList.contains("hidden")) {
+    socialIcons.classList.add("hidden");
+    socialIcons.classList.remove("fade-in");
+  }
+});
     </script>
 
       <script src="myInfoAni.js"></script>
